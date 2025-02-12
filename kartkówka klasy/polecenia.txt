@@ -1,0 +1,14 @@
+zad.1
+zdefiniuj klase o nazwie prostokat skladajaca sei z pol bok1 bok2 
+konstruktora ktorym bokom nadano wartosci 5 8
+metody wypisz ktora wypisuje boki prostokata w postaci
+ boki prostokata wynosza bok1, bok2 cm
+oraz metody ktora wyliczy pole prostokata 
+zdefiniuj klase pochodna do klasy prostokat o nazwie kwadrat
+skladajacej z pola kolor wypelnienia i metody wypisz1
+ktora wypisuje kolor wypelnienia
+zdefiniuj 2 obiekty klasy prostokat 
+dla peirwszego wywolaj metody wypisz pole 
+dla drugiego pobierz boki przy pomocy formularza i wywolaj metody wypisz pole 
+zdefiniuj obiekt klasy kwadrat gdzie dane beda pobrane z pliku bok1,bok2,kolor wypelnienia
+i wywolaj dla niego wszytkie dostepne metody
