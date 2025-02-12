@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //zad.1
+        //Wykonaj zestawienie kwot otrzymanych przez ale w ciagu 30 dni
+        //jezeli kwota z 1 dnia wynosi 5 zl a kazdego nastpnego zwieksza sie o k zlotych(k podaje uzytkownik w stosunku do dnia poprzedniego)
+        //zad.5
+        //narysuj n choinek o podstawie k gwiazdek
+        let k = prompt("Podaj kwote: ")
+        k = parseInt(k)
+        let p = 5
+        let suma = 0
+        for(let i = 1;i <= 30; i++){
+            if(i == 1){
+                suma = suma + p
+            } else {
+                p=p+k
+                suma = suma + p
+            }
+            document.write(i + " dzień Ala dostała " + suma + "<br>")
+        }
+    </script>
+</body>
+</html>

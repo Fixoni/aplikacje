@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //zad.3
+        //w zaleznosci od uzytkownika policz pole albo obw gdzie bok podaje uzytkiwnik
+        let wybor = parseInt(prompt("Wybierz, co chcesz obliczyć: 1-pole lub 2-obwod"))
+        let bok = parseInt(prompt("Podaj długość boku: "))
+        let wynik=0
+        if (bok < 0) {
+            alert("Podaj inną liczbę")
+        } else {
+            switch(wybor){
+            case wybor=1:
+            wynik = bok * bok
+            document.write("Pole kwadratu wynosi: " + wynik)
+            break;
+            case wybor=2:
+            wynik = 4 * bok
+            document.write("Obwód kwadratu wynosi: " + wynik)
+            break;
+            default:
+            document.write("Nieprawidłowy wybór")
+            break;
+            }
+        }
+    </script>
+</body>
+</html>

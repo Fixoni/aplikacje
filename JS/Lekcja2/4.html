@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Zad4
+        //Pobierz nazwisko od uzytkownika ,zadaj pytanie:Czy jestes uczniem?,jesli tak to popros o wpisanie szkoly 
+        //,a jesli nie to wypisz komunikat(okienko):strona nie jest przeznaczona dla ciebie
+
+        var a=prompt("Podaj nazwisko: ");
+        var b=confirm("Czy jestes uczniem?");
+
+        if(b==true){
+            var c=prompt("Wpisz swoja szkole: ");
+        }else{
+            var d=alert("strona nie jest przeznaczona dla ciebie");
+        }
+        document.write("Nazwa szkoly: "+c);
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //zad.2
+        //wypisz wszystkie liczby 3 cyfrowe parzyste, pogrob te z nich ktore sa podzielne przez 10 i policz sume pogrunbionych
+        let suma = 0
+        for (let i = 100; i <= 999; i++) {
+            if (i%2==0 && i%10 == 0) {
+                document.write("<b>" + i + " </b>")
+                suma = suma + i
+            } else {
+                document.write(i + " ")
+            }
+        }
+        document.write("<br>Suma pogrubionych liczb wynosi: " + suma)
+    </script>
+</body>
+</html>

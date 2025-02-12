@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Masz listę 6 liczb od 1 do 6. Użytkownik podaję liczbę przesunięć. Pamiętaj o walidacji. 
+        //Przesunięcie o jeden oznacza, że ostatni element staje się pierwszym, pierwszy drugim, drugi trzecim... Zwróć obróconą listę
+        let numbers = [1, 2, 3, 4, 5, 6];
+
+function rotateArray(arr, shifts) {
+    if (typeof shifts !== 'number' || shifts < 0) return "Invalid input";
+    shifts = shifts % arr.length;
+    return arr.slice(-shifts).concat(arr.slice(0, -shifts));
+}
+
+let userShifts = 2; 
+let result = rotateArray(numbers, userShifts);
+
+    </script>
+</body>
+</html>

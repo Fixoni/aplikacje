@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n=prompt("Podaj n: ")
+        if(Number.isInteger(n)){
+            if(n<0){
+            alert("Nie można wykonać funckji")
+        }else{
+            document.write(`Fibonacci: ${fibonacci(n)}`)
+        }
+        }else{
+            alert("Liczba nie całkowita")
+        }
+        function fibonacci(n){
+            if(n==0){
+                return 0;
+            }else if(n==1){
+                return 1;
+            }else{
+                return fibonacci(n-1)+fibonacci(n-2)
+            }
+        }
+    </script>
+</body>
+</html>

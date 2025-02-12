@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const sum = ([first, ...rest]) => first === undefined ? 0 : first + sum(rest);
+        const numbers = [1, 2, 3, 4, 5];
+        document.write(sum(numbers));
+        document.write(typeof(numbers[0]))
+
+        document.write("<br>")
+
+        const score = 85;
+        const grade = score >= 90 ? "A" : 
+            score >= 80 ? "B" : 
+                score >= 70 ? "C" : 
+                    "F";
+        document.write(grade);
+
+        document.write("<br>")
+
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < 10; j++) {
+                document.write(i, j);
+                break
+            }
+        }
+
+        document.write("<br>")
+
+        document.write(3 << 2)
+
+        document.write("<br>")
+
+        document.write(0.5 + 0.5 + 0.5 == 1.5)
+        document.write(0.3 + 0.3 + 0.3 == 0.9)
+
+        document.write("<br>")
+
+        function* fibonacci() {
+        let [a, b] = [0, 1]
+
+        while (true) {
+            yield a;
+            [a, b] = [b, a + b];
+            }
+        }
+
+        const fib = fibonacci();
+        document.write(fib.next().value);
+        document.write(fib.next().value);
+        document.write(fib.next().value);
+        document.write(fib.next().value);
+        document.write(fib.next().value);
+
+        document.write("<br>")
+
+        const start = Date.now();
+
+        let x = 0;
+
+        const end = Date.now();
+        document.write(`Execution time : ${end - start} ms`);
+
+        document.write("<br>")
+
+        let tab = [1, [2, [3, 4, 5]]];
+        document.write(tab.flat());
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="form1"></form>
+    <label>Podaj a:</label>
+    <input type="number" id="a"><br>
+    <label>Podaj b</label>
+    <input type="number" id="b"><br>
+    <label>Podaj c</label>
+    <input type="number" id="c"><br>
+    <button type="button" onclick="oblicz()">oblicz</button>
+    <p id="wynik"></p>
+    <script>
+        //pobierz a,b,c
+        //policz delte i rozwiazania
+        function oblicz(){
+        let a = document.querySelector('#a').value
+        let b = document.querySelector('#b').value
+        let c = document.querySelector('#c').value
+        let delta = b*b + ((-4)*a*c)
+        let x1=0
+        if(delta>0){
+            let x2=0
+            x1=(-b+Math.sqrt(delta))/2*a
+            x2=(-b-Math.sqrt(delta))/2*a
+            document.querySelector('#wynik').innerHTML = `Miejsca zerowe: ${x1}, ${x2}`
+        }else if(delta==0){
+            x1=(-b)/2*a
+            document.querySelector('#wynik').innerHTML = `Miejsce zerowe: ${x1}`
+        }else{
+            document.querySelector('#wynik').innerHTML = `Nie ma miejsc zerowych`
+        }
+    }
+    </script>
+</body>
+</html>

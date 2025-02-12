@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Wyznaczanie ilości puszek farby</h1>
+    <form action="" name="form1">
+        <label>Podaj szerokość pokoju:</label>
+        <input type="text" name="szerokosc" id="szerokosc"> <br>
+        <label>Podaj długość pokoju:</label>
+        <input type="text" name="dlugosc" id="dlugosc"> <br>
+        <label>Podaj wysokość pokoju:</label>
+        <input type="text" name="wysokosc" id="wysokosc"> <br>
+        <label>Czy chcesz wynająć firmę? </label>
+        <input type="radio" id="firma" name="firma">Tak
+        <input type="radio" id="firma" name="firma">Nie <br>
+        <label>Kredyt:</label>
+        <input type="checkbox" id="kredyt"><br>
+        <button type="button" onclick="oblicz()">Oblicz</button>
+    </form>
+    <p id="czyFirma"></p>
+    <p id="firmaWynik"></p>
+    <p id="powierzchnia"></p>
+    <p id="wynik"></p>
+    <p id="kredytWynik"></p>
+    <script>
+        //Podaj wymiary pokoju szerokosc, dlugosc, wysokosc
+        //wyznacz ilosc puszek farby potrzebna do pomalowania pokoju bez podłogi
+        //jezeli jedna puszka farby wystarcza na pomalowanie 7m^2
+        function oblicz(){
+        let szerokosc = document.querySelector('#szerokosc').value
+        let dlugosc = document.querySelector('#dlugosc').value
+        let wysokosc = document.querySelector('#wysokosc').value
+
+        let powierzchnia = 2*(dlugosc * wysokosc) +2* (szerokosc * wysokosc) + (szerokosc * dlugosc)
+        let wynik = Math.ceil(powierzchnia/7)
+        let cena = 50 * wynik
+        let kredyt = 0
+        document.querySelector('#powierzchnia').innerHTML = (`Powierzchnia wynosi: ${powierzchnia.toFixed(2)}`)
+        if(document.forms['form1'].elements['firma'].checked){
+            cena += powierzchnia *5
+            document.querySelector('#firmaWynik').innerHTML = (`Cena z firmą: ${cena} zl`)
+            if(document.querySelector('#kredyt').checked){
+                kredyt = cena *1.15
+                document.querySelector('#kredytWynik').innerHTML = (`Kredyt : ${kredyt}`)
+            } else {
+                document.querySelector('#kredytWynik').innerHTML = (`Bez kredytu`)
+            }
+        } else {
+            document.querySelector('#wynik').innerHTML = (`${wynik} puszek do pomalowanaia cena: ${cena} zl`)
+        }
+        }
+    </script>
+</body>
+</html>

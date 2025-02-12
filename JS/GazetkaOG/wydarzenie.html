@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="wydarzenie.css">
+    <title>Wydarzenia - Formularz</title>
+</head>
+<body>
+    <header>
+        <img id="headerLogo" src="Logo.png" alt="Logo" style="width: 150px">
+        <h1><div id="pageName" onmouseover="change1()" onmouseout="change2()">Gazetka OG</div></h1>
+        <a href="index.html">
+            <button>Strona główna</button>
+        </a>
+        <a href="wydarzenie.html">
+            <button>Napisz o wydarzeniu</button>
+        </a>
+        <a href="galeria.html">
+            <button>Galeria zdjęć</button>
+        </a>
+        <a href="ocena.html">
+            <button>Ocena</button>
+        </a>
+        <a href="oNas.html">
+            <button>O nas</button>
+        </a>
+    </header>
+
+    <main>
+        <h2>Podaj swoje wydarzenie!</h2>
+        <form id="opinionForm">
+            <label for="eventName">Nazwa wydarzenia:</label>
+            <input type="text" id="eventName" name="eventName" required>
+
+            <label for="eventDescription">Opis wydarzenia:</label>
+            <textarea id="eventDescription" name="eventDescription" rows="4" required></textarea>
+
+            <label for="eventRating">Ocena wydarzenia:</label>
+            <div class="rating">
+                <span class="star" data-value="5">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="1">&#9733;</span>
+            </div>
+            <p id="ratingResult">Wybierz ocenę, klikając gwiazdkę.</p>
+
+            <button type="submit">Dodaj opinię</button>
+        </form>
+    </main>
+
+    <footer>
+        Stronę stworzył: Igor Sikora
+        <div id="timeNow"></div>
+    </footer>
+    <script src="wydarzenie.js"></script>
+</body>
+</html>

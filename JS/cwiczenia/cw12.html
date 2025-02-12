@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                // Masz listę 2D: [[1, 2], [3, 4], [5]]. Zrób z niej listę 1D.
+//3. Masz 3 listy: [1, 2, 3, 5, 7], [2, 3, 4, 6, 8], [2, 6, 7, 9, 10]. 
+//Znajdź unikaty (liczby, które występują tylko w jednej liście). Użyj funkcji includes()
+        let list1 = [1, 2, 3, 5, 7];
+        let list2 = [2, 3, 4, 6, 8];
+        let list3 = [2, 6, 7, 9, 10];
+        let uniqueNumbers = [];
+
+function findUniques(arr1, arr2, arr3) {
+    let allLists = arr1.concat(arr2, arr3);
+    for (let i = 0; i < allLists.length; i++) {
+        let num = allLists[i];
+        if (
+            (arr1.includes(num) && !arr2.includes(num) && !arr3.includes(num)) ||
+            (arr2.includes(num) && !arr1.includes(num) && !arr3.includes(num)) ||
+            (arr3.includes(num) && !arr1.includes(num) && !arr2.includes(num))
+        ) {
+            uniqueNumbers.push(num);
+        }
+    }
+}
+
+findUniques(list1, list2, list3);
+
+    </script>
+</body>
+</html>

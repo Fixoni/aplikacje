@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="galeria.css">
+    <title>Galeria zdjęć</title>
+</head>
+<body>
+    <header>
+        <img id="headerLogo" src="Logo.png" alt="Logo" style="width: 150px">
+        <h1><div id="pageName" onmouseover="change1()" onmouseout="change2()">Gazetka OG</div></h1>
+        <a href="index.html">
+            <button>Strona główna</button>
+        </a>
+        <a href="wydarzenie.html">
+            <button>Napisz o wydarzeniu</button>
+        </a>
+        <a href="galeria.html">
+            <button>Galeria zdjęć</button>
+        </a>
+        <a href="ocena.html">
+            <button>Ocena</button>
+        </a>
+        <a href="oNas.html">
+            <button>O nas</button>
+        </a>
+    </header>
+    <main>
+        <h2>Nasza Galeria Zdjęć</h2>
+        <div class="gallery">
+            <img src="zdj.jpeg" alt="Zdjęcie 1" class="gallery-image">
+            <img src="zdj2.jpeg" alt="Zdjęcie 2" class="gallery-image">
+            <img src="zdj3.jpeg" alt="Zdjęcie 3" class="gallery-image">
+            <img src="zdj4.jpeg" alt="Zdjęcie 4" class="gallery-image">
+            <img src="zdj5.jpg" alt="Zdjęcie 5" class="gallery-image">
+            <img src="zdj6.jpg" alt="Zdjęcie 6" class="gallery-image">
+        </div>
+        <div id="modal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
+    </main>
+    <footer>Stronę stworzył: Igor Sikora
+        <div id="timeNow"></div>
+    </footer>
+
+    <script src="galeria.js"></script>
+</body>
+</html>

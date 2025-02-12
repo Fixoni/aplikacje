@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Zad2
+        //Napisz skrypt ktory w zaleznosci od wyboru dzialania bedzie wykonywal i pokazywal dzialanie na 2 liczbach rzeczywistych pobranych od uzytkownika(+,-,/,*)
+        var a=prompt("Podaj liczbe rzeczywista: ");
+        var b=prompt("Podaj 2 liczbe r.");
+        a=parseInt(a);
+        b=parseInt(b);
+        var w=prompt("Podaj dzialanie ktore chcesz wykonac na liczbach(dodawanie,odejmowanie,mnozenie,dzielenie): ");
+   
+        function potega(p,w){
+            var a=1;
+            for(var i=w;i>0;i--){
+               a*=p;
+            }
+            return a;
+            
+        }
+        function nwd(a,b)
+            {
+                while(a!=b){
+                    if(a>b){
+                        a=a-b;
+                    }else if(b>a){
+                        b=b-a;
+                    }
+                    return a;
+                }
+                
+            }
+        switch (w){
+            case 'dodawanie':
+                var s=a+b;
+                document.write("dodawanie: "+s);
+                break;
+            case 'odejmowanie':
+                document.write("odejmowanie: "+a-b);
+                break;
+            case 'dzielenie':
+                if(a!=0 && b!=0){
+                    document.wite("dzielenie: "+a/b);
+                }else{
+                    document.write("Nie dzieli sie przez 0");
+                }
+                
+                break;
+            case 'mnozenie':
+                var i=a*b;
+                document.write("mnozenie: "+i);
+                break;
+            case 'potega':
+                document.write("Potegowanie: "+potega(a,b));
+            break;
+
+            case "nwd":
+            document.write("NWD: "+nwd(a,b));
+            break;
+
+        }
+        
+        
+    </script>
+</body>
+</html>

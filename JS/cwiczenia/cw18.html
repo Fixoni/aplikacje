@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let input = "1, 2, 3";
+        let numbers = input.split(',').map(Number);
+        let subsets = [];
+
+        function generateSubsets(arr) {
+            let total = Math.pow(2, arr.length);
+            for (let i = 0; i < total; i++) {
+                let subset = [];
+                    for (let j = 0; j < arr.length; j++) {
+                        if (i & (1 << j)) {
+                        subset.push(arr[j]);
+                }
+            }
+                subsets.push(subset);
+        }
+    }
+
+generateSubsets(numbers);
+
+    </script>
+</body>
+</html>

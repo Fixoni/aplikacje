@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let zdanie="Alamakotakotmaale"
+        let size=1
+        let direction=1
+        for(let i=0;i<zdanie.length;i++){
+            let b=zdanie.toUpperCase()
+            document.write(b[i].fontsize(size))
+            size=size+direction
+            if(size==1 || size==7){
+                direction=-direction
+            }
+        }
+    </script>
+</body>
+</html>

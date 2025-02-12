@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=prompt("Podaj liczbe:")
+        var b=prompt("Podaj liczbe:")
+        
+        /*
+        var w=isNaN(a)
+        document.write("isNaN: "+w+"</br>")
+        var w2=isFinite(a)
+        document.write("isFinite: "+w2+"</br>")
+       /*
+        var c=parseInt("123AB",16)
+        document.writeln(c)
+       
+        var c=parseInt("123",8)
+        document.write(c)
+       */
+        
+        document.write("Potega a do b "+Math.pow(a,b)+"</br>")
+        document.write("a podzielone przez b: "+a/b+"</br>")
+        document.write("Wieksza liczba: "+Math.max(a,b)+"</br>")
+        var z=prompt("Podaj liczbe do zaokrąglenia: ")
+        document.write("Zaokrąglenie: "+Math.round(z))
+    </script>
+</body>
+</html>

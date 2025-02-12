@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Gazetka OG</title>
+</head>
+<body>
+    <header>
+        <img id="headerLogo" src="Logo.png" alt="Logo" style="width: 150px">
+        <h1><div id="pageName" onmouseover="change1()" onmouseout="change2()">Gazetka OG</div></h1>
+        <a href="index.html">
+            <button>Strona główna</button>
+        </a>
+        <a href="wydarzenie.html">
+            <button>Napisz o wydarzeniu</button>
+        </a>
+        <a href="galeria.html">
+            <button>Galeria zdjęć</button>
+        </a>
+        <a href="ocena.html">
+            <button>Ocena</button>
+        </a>
+        <a href="oNas.html">
+            <button>O nas</button>
+        </a>
+    </header>
+    <main>
+        <h2>Ostatnie wydarzenia</h2>
+        <div class="event-box">
+            <h3>Koncert Noworoczny</h3>
+            <img src="zdj.jpeg" alt="Koncert Noworoczny" class="gallery-image">
+            <p>2 stycznia 2025 r. w Centrum Kultury odbył się wyjątkowy koncert orkiestry symfonicznej. Wieczór pełen muzyki klasycznej przyciągnął tłumy mieszkańców.</p>
+            <h3>Otwarcie Nowego Parku</h3>
+            <img src="zdj2.jpeg" alt="Otwarcie Nowego Parku" class="gallery-image">
+            <p>5 stycznia 2025 r. oficjalnie otwarto nowy park miejski przy ulicy Zielonej. Wydarzenie uświetniły liczne atrakcje dla dzieci oraz występy artystyczne.</p>
+            <h3>Jarmark Świąteczny</h3>
+            <img src="zdj3.jpeg" alt="Jarmark Świąteczny" class="gallery-image">
+            <p>20 grudnia 2024 r. zakończył się tradycyjny jarmark świąteczny. Przez dwa tygodnie mieszkańcy mogli kupować lokalne produkty i ozdoby świąteczne.</p>
+            <h3>Warsztaty Rękodzieła</h3>
+            <img src="zdj4.jpeg" alt="Warsztaty Rękodzieła" class="gallery-image">
+            <p>18 grudnia 2024 r. w bibliotece miejskiej odbyły się warsztaty rękodzieła, na których uczestnicy tworzyli własne ozdoby świąteczne.</p>
+            <h3>Turniej E-sportowy</h3>
+            <img src="zdj5.jpg" alt="Turniej E-sportowy" class="gallery-image">
+            <p>15 grudnia 2024 r. odbył się turniej e-sportowy w grę League of Legends. Najlepsza drużyna zdobyła nagrodę w wysokości 10 000 zł.</p>
+            <h3>Wystawa Sztuki Nowoczesnej</h3>
+            <img src="zdj6.jpg" alt="Wystawa Sztuki Nowoczesnej" class="gallery-image">
+            <p>10 stycznia 2025 r. w Galerii Sztuki Miejskiej odbyła się wystawa sztuki nowoczesnej, prezentująca prace lokalnych artystów. Wystawa cieszyła się dużym zainteresowaniem, a zwiedzający mogli podziwiać innowacyjne podejście do sztuki współczesnej.</p>
+        </div>
+    </main>
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+    <footer>Stronę stworzył: Igor Sikora
+        <div id="timeNow"></div>
+    </footer>
+</body>
+<script src="index.js"></script>
+</html>

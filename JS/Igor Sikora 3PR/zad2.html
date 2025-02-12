@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Perfekcyjna(liczba) {
+        if (liczba <= 1){
+        return false;
+        }
+        var suma = 0;
+        for (var i = 1; i <= liczba / 2; i++) {
+            if (liczba % i === 0){
+                suma += i;
+            }
+            }
+        return suma === liczba;
+}
+
+var a = parseInt(prompt("Podaj liczbę:"));
+var wynik = Perfekcyjna(a);
+document.write("Wynik: "+wynik)
+
+    </script>
+</body>
+</html>

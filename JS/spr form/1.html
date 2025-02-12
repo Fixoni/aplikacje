@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria</title>
+</head>
+<body>
+    <form action="" name="form1">
+    <h2>Wybór pizzy</h2>
+    <label>Wybór ciasta:</label>
+    <input type="radio" name="ciasto" value="cienkie">Cienkie
+    <input type="radio" name="ciasto" value="grube">Grube 
+    <br>
+    <label>Ilość:</label>
+    <input type="number" id="ilosc"> <br>
+    <label>Nazwa:</label>
+    <select name="wybor1" id="wybor1">
+        <option value="Hawajska">Hawajska</option>
+        <option value="Peperonii">Peperonii</option>
+        <option value="Caprociosa">Caprociosa</option>
+        <option value="Farmerska">Farmerska</option>
+    </select><br>
+    <label>Dodatki gratis:</label>
+    <select name="wybor2" id="wybor2" multiple>
+        <option value="szynka">szynka</option>
+        <option value="kukurydza">kukurydza</option>
+        <option value="sos">sos</option>
+        <option value="ser">ser</option>
+        <option value="papryka">papryka</option>
+    </select><br>
+    <label>Czy z dowozem:</label>
+    <input type="checkbox" name="dowoz" id="dowoz"><br>
+    <button type="button" onclick="zamow()">Zamów</button>
+    </form>
+    <p id="nazwa"></p>
+    <p id="rodzajCiasta"></p>
+    <p id="dodatki"></p>
+    <p id="pizzaNazwa"></p>
+    <p id="iloscPizzy"></p>
+    <p id="dowozPizzy"></p>
+    <p id="zamowienie"></p>
+    <script>
+        function zamow() {
+        let ciasto = document.querySelector('input[name="ciasto"]:checked').value
+        let ilosc = document.querySelector('#ilosc').value
+        let wybor1 = document.querySelector('#wybor1').value
+        let cena = 0
+
+        switch(wybor1){
+            case 'Hawajska':
+                cena = 35
+                break
+            case 'Peperonii':
+                cena = 30
+                break
+            case 'Caprociosa':
+                cena = 40
+                break;
+            case 'Farmerska':
+                cena = 45
+        }
+
+        document.querySelector('#pizzaNazwa').innerHTML = `Cena za jedna pizze: ${cena} zł`
+        document.querySelector('#nazwa').innerHTML = `Nazwa pizzy: ${wybor1}`
+        cena = cena * ilosc
+        document.querySelector('#iloscPizzy').innerHTML = `Ilość pizzy: ${ilosc}`
+        
+        if(ciasto === "grube"){
+            cena += 5
+        }
+        document.querySelector('#rodzajCiasta').innerHTML = `Rodzaj ciasta: ${ciasto}`
+        
+        if(document.querySelector('#dowoz').checked){
+            cena += 20
+            document.querySelector('#dowozPizzy').innerHTML = `Dowóz: TAK`
+        } else {
+            document.querySelector('#dowozPizzy').innerHTML = `Dowóz: NIE`
+        }
+
+        document.querySelector('#zamowienie').innerHTML = `Do zapłaty: ${cena} zł`
+        }
+    </script>
+</body>
+</html>

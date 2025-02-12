@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[1,2,3]
+        let arr2=[4,5]
+        let arr3=[6,7,...arr2]
+        let arr4="ala ma kota"
+        let arr5="kot ma ale"
+        document.write(`${arr} <br>`)
+        document.write(`${arr2} <br>`)
+        document.write(`${arr3} <br>`)
+        document.write(`${[...arr,...arr2,...arr3]} <br>`)
+        document.write(`${[...arr4,...arr5]}<br>`)
+        document.write(([...arr4.split(" "), ...arr5.split(" ")]).join(" ")+"<br>")
+        var arr6 = [1, 2, 3,6,4,9,0,3];
+        /*
+        function add(a, b, c) {
+            return a + b + c;
+        }
+        document.write(add(...arr6)+"<br>");*/
+        document.write(eval(arr6.join("+"))+"<br>");
+        const [a,b,c,...d]=arr6
+        document.write(`${b} <br>`)
+        let age=13
+        /*
+        if(age>=18){
+            document.write("Pełnoletni")
+        }else{
+            document.write("NIE Pełnoletni")
+        }
+            */
+        var napis = age >= 18 ? "Pełnoletni" : "NIE pełnoletni"
+        document.write(age >= 18 ? "Pełnoletni <br>" : "NIE pełnoletni <br>")
+        document.write(`${napis} <br>`)
+    </script>
+</body>
+</html>

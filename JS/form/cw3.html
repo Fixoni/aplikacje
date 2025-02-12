@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="form1" method="post">
+        <label>Podaj długość: </label>
+        <input type="text" name="dlugosc"><br>
+        <label>Podaj szerokość</label>
+        <input type="text" name="szerokosc"><br>
+        <label>Firma: </label>
+        <input type="radio" name="firma" value="tak">Tak
+        <input type="radio" name="firma" value="nie">Nie <br>
+        <label>Materiał:</label>
+        <select name="lista">
+            <option value="drewno">Drewno</option>
+            <option value="metal">Metal</option>
+            <option value="kamien">Kamien</option>
+            <option value="cegla">Cegla</option>
+        </select><br>
+        <label>Co masz na działce: </label>
+        <select name="lista2" multiple>
+            <option value="krasnal">Krasnal</option>
+            <option value="kwiatki">Kwiatki</option>
+            <option value="altanka">Altanka</option>
+            <option value="szopa">Szopa</option>
+        </select><br>
+        <select name="lista3">
+            <option value="wies">Wieś</option>
+            <option value="miasto">Miasto</option>
+            <option value="zadupie">Zadupie</option>
+        </select><br>
+        <input type="button" value = "Oblicz" onclick="oblicz()">
+    </form>
+    <p id="wynik"></p>
+    <p id="ogrodek"></p>
+    <p id="zamieszkanie"></p>
+    <script>
+    // utworz formularz gdzie od uzytkownika pobierzemy 
+    // rozmiar dzialki szerokosc i dlugosc w m
+    // przy pomocy radiobaton, pyrzamy sie czy firma ma wykonac ogrodzenie
+    // wybor materialu przy pomocy listy wielikrotnego wyboru
+    // drewno, kamien, cegla, metal
+    // przycisk oblicz ktory wyznacza cene ogrodzenia
+    // drewno-100zl m
+    // kamien-150zl m
+    // metal-300zl m
+    // cegla-200zl m
+    // firma-100zl m
+    //co znajduje sie w ogordku multiple
+    //gdzie mieszkasz lista rozwijalna
+    function oblicz(){
+
+    let dlugosc = document.forms[0].dlugosc.value
+    let szerokosc = document.forms[0].szerokosc.value
+    let firma = document.forms[0].firma.value
+    let material = document.forms[0].lista.value
+    let ogrodek = document.forms[0].lista2
+    let  zamieszkanie = document.forms[0].lista3.value
+    let wynik = 0
+    wynik = 2*dlugosc + 2*szerokosc
+    let cena = 0
+    let wynik2=""
+    switch(zamieszkanie){
+        case 'miasto':
+            wynik2+="miescie"
+            document.querySelector('#zamieszkanie').innerHTML = `Mieszkasz na ${wynik2}`
+        break
+        case 'wies':
+            wynik2+="wiesi"
+            document.querySelector('#zamieszkanie').innerHTML = `Mieszkasz na ${wynik2}`
+        break
+        case 'zadupie':
+            wynik2+="zadupiu"
+            document.querySelector('#zamieszkanie').innerHTML = `Mieszkasz na ${wynik2}`
+        break
+    }
+
+    switch(material){
+        case 'drewno':
+            cena = wynik*100
+        break
+        case 'metal':
+            cena = wynik*300
+        break
+        case 'kamien':
+            cena = wynik*150
+        break
+        case 'cegla':
+            cena = wynik*200
+        break
+    }
+    if(firma == 'tak'){
+        cena += wynik*100
+    }
+    document.querySelector('#wynik').innerHTML =
+    `Dlugość: ${dlugosc} Szerokość: ${szerokosc} 
+    Obwód: ${wynik} Materiał: ${material} Cena: ${cena}zł`
+
+    let ogrodekContent = "Co masz na działce: ";
+        for (let i = 0; i < ogrodek.length; i++) {
+            ogrodekContent += ogrodek[i].value + " ";
+        }
+        document.querySelector('#ogrodek').innerHTML = ogrodekContent;
+    }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //Użytkownik podaje liczbę naturalną. 
+        //Pamiętaj o walidacji (czy integer i czy liczba dodatnia). 
+        //Podaj sumę cyfr tej liczby. Najlepiej użyj rekurencji. 
+        var a=prompt("Podaj a")
+        /*
+        a=parseInt(a)
+        var tablica=[]
+        var suma=0
+        var b=1
+        var string=String(a)
+        for(var i=0;i<string.length;i++){
+            tablica[i]=string[i]
+            b=parseInt(string[i])
+            suma=suma+b
+        }
+            document.write(`${a}, ${suma} </br>`)
+        b=0
+        
+        document.write(`${a}</br>`)
+        var d=0
+       while(a>0){
+            d=a%10
+            suma=suma+d
+            a=a-d
+            a=a/10
+       }
+       document.write(`${suma}`)
+       */
+        var suma=0
+        var tablica=a.split("")
+        for(var i=0;i<tablica.length;i++){
+            suma=suma+Number(tablica[i])
+        }
+        document.write(a+"<br>")
+        document.write(suma)
+    </script>
+</body>
+</html>

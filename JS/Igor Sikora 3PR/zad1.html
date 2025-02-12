@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var suma1=0
+        var suma2=0
+        var n = prompt("Podaj ilość dni:")
+        for (var i=1; i <=n;i++) {
+            if (i==1) {
+                suma1+=5
+                suma2+=5
+            } else {
+                if (i%2==0) {
+                    suma1+=(suma1*0.03)
+                } else {
+                    suma2+=(suma2*0.03)
+                }
+            }
+        }
+        document.write("Kwota Ali: " + suma1 + "<br/>")
+        document.write("Kwota Basi: " + suma2 + "<br/>")
+    </script>
+</body>
+</html>

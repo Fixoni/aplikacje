@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">    
+    <title>Kalendarz</title>
+</head>
+<body>
+    <div class="calendar">
+        <div class="upper"></div>
+        <div class="middle"></div>
+        <div class="down"></div>
+    </div>
+    <script>
+        let data1 = new Date()
+        data1.setHours(0, 0, 0, 0)
+
+        let month = data1.getMonth()
+        let day = data1.getDay()
+        let date = data1.getDate()
+        let year = data1.getFullYear()
+
+        let months = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"]
+        let days = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"]
+
+        const upper = document.querySelector(".upper")
+        const down = document.querySelector(".down")
+        const middle = document.querySelector(".middle")
+
+        if (month === 11 || month === 0 || month === 1) {
+            document.body.classList.add("winter")
+        } else if (month === 2 || month === 3 || month === 4) {
+            document.body.classList.add("spring")
+        } else if (month === 5 || month === 6 || month === 7) {
+            document.body.classList.add("summer")
+        } else if (month === 8 || month === 9 || month === 10) {
+            document.body.classList.add("autumn")
+        }
+
+        upper.innerHTML = months[month] + " " + year
+
+        function styleSunday(date, day) {
+            middle.innerHTML = `<span class="date">${date}</span><br><span class="day">${days[day]}</span>`
+            middle.querySelector(".date").style.color = day === 0 ? "red" : "white"
+            middle.querySelector(".day").style.color = day === 0 ? "red" : "white"
+        }
+
+        styleSunday(date, day)
+
+        let birthday = new Date(year, 9, 3)
+        birthday.setHours(0, 0, 0, 0)
+
+        let today = data1.getTime()
+        let btd = birthday.getTime()
+
+        if (btd < today) {
+            birthday.setFullYear(year + 1)
+            btd = birthday.getTime()
+        }
+
+        let result = (btd - today) / (1000 * 60 * 60 * 24)
+
+        if (parseInt(result) === 0) {
+            document.body.classList.add("birthday")
+            down.innerHTML = "Dziś są moje urodziny!"
+        } else {
+            const daysRemaining = Math.ceil(result)
+            down.innerHTML = "Do moich urodzin został" + (daysRemaining === 1 ? ": " + daysRemaining + " dzień" : "o: " + daysRemaining + " dni")
+        }
+    </script>
+</body>
+</html>

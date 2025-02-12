@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Użytkownik podaje listę oddzieloną przecinkami. 
+        //Wyznacz medianę (wzór/sposób z matematyki).
+        //4,5,6,7,8,9,0,1,2,3,5
+        var a=prompt("Podaj liste po przecinku: ")
+        var arr=[]
+        arr=a.split(",")
+        arr = arr.map(x => {
+        return parseInt(x)
+            })
+        arr.sort()
+        var mediana=0
+        var dlugosc=arr.length
+        if(dlugosc%2==0){
+            mediana=(arr[dlugosc/2]+arr[dlugosc/2-1])/2
+        }else{
+            mediana=arr[(dlugosc-1)/2]
+        }
+        document.write(mediana)
+    </script>
+</body>
+</html>

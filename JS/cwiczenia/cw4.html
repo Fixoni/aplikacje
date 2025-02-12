@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: monospace;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        
+        var a = prompt("Podaj ilość rzędów")
+        var b = prompt("Podaj ilość klepsydr")
+        /*
+        for (var j = 1; j <= b; j++) {
+            for (var i = a; i >= 1; i--) {
+                for (var p = 0; p < a - i; p++) {
+                    document.write(" "); 
+                }
+                for (var p = 0; p < i; p++) {
+                    document.write("**");
+                }
+                document.write("<br>");
+            }
+            for (var i = 2; i <= a; i++) {
+                for (var p = 0; p < a - i; p++) {
+                    document.write(" ");
+                }
+                for (var p = 0; p < i; p++) {
+                    document.write("**");
+                }
+                document.write("<br>");
+            }
+            document.write("<br>");
+        }
+            */
+        function print_hourglass(n, spaces=0) {
+    if (n <= 0) return
+
+  document.write(' '.repeat(spaces) + ''.repeat(n))
+  print_hourglass(n - 2, spaces + 1)
+
+  if (n > 2) {
+    document.write(' '.repeat(spaces) + ''.repeat(n))
+  }
+}
+
+print_hourglass(b)
+    </script>
+</body>
+</html>

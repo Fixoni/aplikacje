@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person {
+    constructor(name, age, height, company="Microsoft") {
+        this.name = name
+        this.age = age
+        this.height = height
+        this.company = company
+    }
+
+    // 1. Custom string representation
+    toString() {
+        return `Name:${this.name}, Age:${this.age} Height:${this.height} Company:${this.company}`
+    }
+
+    // 2. Numeric representation
+    valueOf() {
+        return this.age/2 
+    }
+    *[Symbol.iterator]() {
+        yield this.name;
+        yield this.age;
+        yield this.height;
+        yield this.company;
+        }
+}
+
+        const person = new Person("Adam", 25,175)
+/*
+console.log(`${person}`);
+
+console.log(person + 10);
+
+console.log(String(person)); 
+console.log(Number(person));
+*/
+        document.write(person.toString()+"<br>")
+        document.write(`${person} <br>  `)
+        document.write(person.valueOf()+"<br>")
+        document.write(person+50+"<br>")
+        const person2 = new Person("Piotr", 19,190,"Google")
+        document.write(person2+person+"<br>")
+        document.write(person.toString()+" "+person2.toString()+"<br>")
+        for (const value of person) {       
+        document.write(value);
+        }
+    </script>
+</body>
+</html>

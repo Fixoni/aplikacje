@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                //zad.1 Grupa 1
+        //Pobrac 3 liczby od uzytkownika
+        //wyznaczyc ich sume,
+        //podniesc do potegi o wykladniku 1 liczby z pobranych liczb
+        //wyznaczyc pierwiastek, zaokraglic w gore
+        //zad.2 
+        //liczbe z zad 1 traktujemy jako rozmiar tablicy
+        //wypelniamy liczbami calkowitymi od 1 do 100
+        //wyswietl tablice
+        //posortuj rosnaco te liczby
+        //dodaj na koniec liczby 666,777
+        //sprawdz na jakiej pozycji znajduje sie nowa liczba pobrana od uzytkownika 
+        //przekowertuj tablice na string
+        //uzyj jako separator :
+        //zad.3
+        //otrzymany napis wypisz formatujac go w nastepujacy sposob
+        //: koloru czerwonego
+        //wszystkie cyfry 1 zamienic na litere a i wypisac jako indeks gorny kolory zielonego
+        //co drugi znak od zaczynajac od 1 mozliwie najwieksza czcionka pozotale znaki rozmiarem 2
+        //zad.4
+        //tablice asocjacocyjna gdzie kluaczmi sa nazwiska nazwy przedmiotów a wartosciami wiek wypelnij 6 rekordami
+        //wypisz w czytelnej postaci 
+        //nastepnie wylosuj 6 liczb calkowitych z przedziału 150 do 200 i potraktuj je jako wartosci wzrotu danej oosby
+        //wypisz tablice nazwisko,wiek,wzrost
+        //1:2:3:4:5:6:7:8:9:0:1:1:3:2:4
+        let a = parseInt(prompt("Podaj liczbe a do obliczen:"));
+        let b = parseInt(prompt("Podaj liczbe b do obliczen:"));
+        let c = parseInt(prompt("Podaj liczbe c do obliczen:"));
+        let d = parseInt(prompt("Podaj liczbe d do znalezenia w tablicy:"));
+        
+        let suma = a + b + c;
+        document.write(suma + "<br>");
+        let potega = Math.pow(suma, a);
+        document.write(potega + "<br>");
+        let pierwiastek = Math.ceil(Math.sqrt(potega));
+        document.write(pierwiastek + "<br>");
+        
+        let arr = new Array(pierwiastek);
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = Math.floor(Math.random() * 100) + 1;
+        }
+        arr.sort((a, b) => a - b);
+        document.write(arr + "<br>");
+        
+        arr.push(666, 777);
+        arr.sort((a, b) => a - b);
+        document.write(arr + "<br>");
+        
+        let wystapienia = 0;
+        if (arr.indexOf(d) !== -1) {
+            for (let j = 0; j < arr.length; j++) {
+                if (arr[j] === d) {
+                    wystapienia++;
+                }
+            }
+            document.write("Liczba " + d + " znajduje sie w tablicy tyle razy: " + wystapienia + "<br>");
+        } else {
+            document.write("Liczba " + d + " NIE znajduje sie w tablicy<br>");
+        }
+        
+        let arr2 = "1:2:3:4:5:6:7:8:9:0:1:1:3:2:4";
+        arr2 = arr2.split(":").sort((a, b) => a - b).join(":");
+        
+        let styl = document.createElement("span");
+        styl.style.color = "red";
+        styl.innerText = arr2 + "\n";
+        document.body.appendChild(styl);
+        
+        for (let k = 0; k < arr2.length; k++) {
+            let znak = document.createElement("span");
+            if (arr2[k] === '1') {
+                znak.style.color = "green";
+                znak.style.fontSize = "larger";
+                znak.innerText = "a";
+            } else if (k % 2 === 1) {
+                znak.style.fontSize = "35px";
+                znak.innerText = arr2[k];
+            } else {
+                znak.style.fontSize = "10px";
+                znak.innerText = arr2[k];
+            }
+            document.body.appendChild(znak);
+        }
+        let osoby = {
+            "Kowalski": 25,
+            "Nowak": 30,
+            "Wiśniewski": 45,
+            "Kamiński": 35,
+            "Lewandowski": 28,
+            "Dąbrowski": 50
+        };
+        document.write("<h3>Tablica nazwisko-wiek:</h3>");
+        for (let nazwisko in osoby) {
+            document.write(`Nazwisko: ${nazwisko}, Wiek: ${osoby[nazwisko]}<br>`);
+        }
+        let wzrosty = {};
+        for (let nazwisko in osoby) {
+            wzrosty[nazwisko] = Math.floor(Math.random() * 51) + 150; 
+        }
+        document.write("<h3>Tablica nazwisko-wiek-wzrost:</h3>");
+        for (let nazwisko in osoby) {
+            document.write(`Nazwisko: ${nazwisko}, Wiek: ${osoby[nazwisko]}, Wzrost: ${wzrosty[nazwisko]} cm<br>`);
+        }
+    </script>
+</body>
+</html>

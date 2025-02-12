@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Wybór:</label>
+        Pole<input type="checkbox" id="pole">
+        Obwód<input type="checkbox" id="obwod"><br>
+        <label>Podaj promien:</label><br>
+        <input type="number" id="r"><br>
+        <button type="button" onclick="oblicz()">Oblicz</button>
+    </form>
+    <p id="poleWynik"></p>
+    <p id="obwodWynik"></p>
+    <script>
+        //przy pomocy checkbox pole, obwod,
+        //podaj promien
+        function oblicz(){
+            let p = document.querySelector('#pole')
+            let obw = document.querySelector('#obwod')
+            let r = document.querySelector('#r').value
+            let pole = 0
+            let obwod = 0
+            if(!isNaN(r) && r>0){
+                if(p.checked){
+                    pole = Math.PI*Math.pow(r,2)
+                    pole = pole.toFixed(2)
+                    document.querySelector('#poleWynik').innerHTML = `Pole: ${pole}`
+                }if(obw.checked){
+                    obwod = 2*Math.PI*r
+                    obwod = obwod.toFixed(2)
+                    document.querySelector('#obwodWynik').innerHTML = `Obwód: ${obwod}`
+                }
+            }
+        }
+    </script>
+</body>
+</html>

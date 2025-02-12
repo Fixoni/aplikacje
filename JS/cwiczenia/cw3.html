@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+    var x = "aasd"
+    var y = pow(x)
+    document.write(y)
+    
+    try{
+    var x = "asad"
+    var y = Math.pow(x)
+    document.write(y)
+    document.write("dkjfsdkjfkj")
+    }catch({ name, message }) {
+    document.write("Wypisuj\n")
+    document.write(message)
+    }
+    */
+    var silnia;
+   function Silnia(n){
+    if(n==0){
+        return 1;
+    }else{
+        return Silnia(n-1)*n
+    }
+   }
+   var n=prompt("Podaj n żeby obliczyć silnie: ")
+   n=parseInt(n)
+   if(n>=0){
+    document.write(`Silnia wynosi: ${Silnia(n)}`)
+} else {
+    alert("Podaj liczbe dodatnią")
+}
+    </script>
+</body>
+</html>

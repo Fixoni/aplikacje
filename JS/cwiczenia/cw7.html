@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Użytkownik podaje zbiór liczb dodatnich oddzielonych przecinkami. 
+        //Przekonwertuj takiego stringa na listę/tablicę i usuń duplikaty.
+        var a=prompt("Podaj zbiór liczb po przecinku")
+        var tablica=a.split(",")
+        var tablica2=[]
+        tablica.sort()
+        for(var i=0;i<tablica.length;i++){
+            if(!tablica2.includes(tablica[i])){
+                tablica2.push(tablica[i])
+                
+            }
+        }
+        document.write(`${tablica2} `)
+    </script>
+</body>
+</html>

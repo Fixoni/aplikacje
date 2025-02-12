@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Użytkownik podaje dwie listy oddzielone przecinkami. 
+        //Stwórz z nich jedną listę, która nie zawiera duplikatów.
+        var a=prompt("Podaj jedna liste: ")
+        var b=prompt("Podaj drugą liste: ")
+        var tab=[]
+        var tab2=[]
+        var tab3=[]
+        tab=a.split(",")
+        tab2=b.split(",")
+        tab3=tab.concat(tab2)
+        var c=new Set(tab3)
+        document.write(Array.from(c)+"</br>")
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Użytkownik podaje, o ile godzin jego strefa czasowa jest przed naszą. 
+        //Pamiętaj o walidacji. 
+        //Pobierz aktualny czas i przesuń go o tyle godzin. Wypisz w ładnej postaci.
+        
+        var a=prompt("Podaj różnice czasową w godzinach")
+        a=parseInt(a)
+        /*
+        var godzina=new Date().getHours()
+        document.write(`Godzina aktulana: ${godzina} </br>`)
+        var zmiana=parseInt(godzina)
+        zmiana=zmiana+a
+        zmiana=zmiana%24
+        document.write(`Godzina po zmianie czasowej: ${zmiana}`)
+        */
+        var data=new Date().toISOString()
+        document.write(data+"</br>")
+        var czas=data.split("T")[1].split(".")[0].split(":")
+        var tablica=czas[0]
+        document.write(tablica+"</br>")
+        tablica=parseInt(tablica)+a
+        tablica=tablica%24
+        document.write(tablica+"</br>")
+        czas[0]=tablica
+        document.write(czas+"</br>")
+        czas=czas.join(":")
+        document.write(czas+"</br>")
+    </script>
+</body>
+</html>

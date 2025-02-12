@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let liczba = prompt("Podaj liczbę 3-cyfrową")
+        if(liczba.length<3) {
+            document.write("Liczba musi byc 3 cyfrowa")
+        } else {
+        let setki = Math.floor(liczba / 100)
+        let dziesiatki = Math.floor((liczba % 100) / 10)
+        let jednosci = liczba % 10
+        let nowaLiczba = jednosci * 100 + dziesiatki * 10 + setki
+        document.write(nowaLiczba)
+        }
+    </script>
+</body>
+</html>

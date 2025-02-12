@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Podaj liczbe dni"))
+        let suma = 0
+        let kwota = 5
+        for(let i = 1; i <= n; i++) {
+            if(i==1){
+                suma = suma + kwota
+                document.write(`Dzien ${i}: ${suma} <br>`)
+            } else {
+                kwota = kwota + 2
+                suma = suma + kwota
+                document.write(`Dzien ${i}: ${suma} <br>`)
+            }
+        }
+    </script>
+</body>
+</html>

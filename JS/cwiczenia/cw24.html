@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Masz tablicę asocjacyjną
+//inventory = {
+    //"laptop": { quantity: 3, price: 900, category: "Electronics" },
+   // "phone": { quantity: 10, price: 600, category: "Electronics" },
+    //"headphones": { quantity: 2, price: 150, category: "Accessories" },
+    //"keyboard": { quantity: 7, price: 80, category: "Accessories" },
+    //"mouse": { quantity: 1, price: 30, category: "Accessories" }}
+//Stwórz osobną tablicę, która zawiera tylko elementy o kategorii Accesories i jest posortowana po cenie (rosnąco). Użyj filter.
+
+        var inventory = {
+    "laptop": { quantity: 3, price: 900, category: "Electronics" },
+    "phone": { quantity: 10, price: 600, category: "Electronics" },
+    "headphones": { quantity: 2, price: 150, category: "Accessories" },
+    "keyboard": { quantity: 7, price: 80, category: "Accessories" },
+    "mouse": { quantity: 1, price: 30, category: "Accessories" }
+}
+    document.write(inventory+"</br>")
+    var accesories = Object.entries(inventory).filter(([key,value])=>value.category=="Accessories")
+        document.write(accesories+"</br>")
+        accesories.sort(([,a],[,b]) => a.price - b.price)
+        //a i b to porownanie elementow a nawiasy sa dla kluczy,
+        //sprawdza czy a-b>0
+        for(const [item,data] of accesories){
+            document.write(item+" "+data.category+"</br>")
+        }
+    </script>
+</body>
+</html>

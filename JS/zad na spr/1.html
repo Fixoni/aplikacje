@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uczniowie i Średnie</title>
+</head>
+<body>
+    <script>
+        //tablice asosjacyjna o rozmiarze 6 gdzie kluczami sa nazwiska 
+        //a wartosciami srednia ocen wypelnij danymi pobranymi od uzytkownika
+        //wyswietl tablice w postaci nazwisko, srednia ocen: 
+        //znajdz ucznnia o najwyzszej sredniej za pomoca funkcji wbdudowanje  nazwisko + srednia
+        let uczniowie = [];
+        for (let i = 0; i < 6; i++) {
+            let nazwisko = prompt("Podaj nazwisko do tablicy: ");
+            let srednia = parseFloat(prompt("Podaj średnią do nazwiska: "));
+            uczniowie[nazwisko] = srednia;
+        }
+        document.write("<h2>Uczniowie i ich średnie:</h2>");
+        for (let nazwisko in uczniowie) {
+            document.write(`${nazwisko}, średnia ocen: ${uczniowie[nazwisko]}<br>`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Masz tablicę asocjacyjną
+sales = [
+    { customerId: "A123", name: "Alice", amount: 120 },
+    { customerId: "B456", name: "Bob", amount: 50 },
+    { customerId: "A123", name: "Alice", amount: 80 },
+    { customerId: "C789", name: "Charlie", amount: 200 },
+    { customerId: "B456", name: "Bob", amount: 150 },
+    { customerId: "A123", name: "Alice", amount: 100 }
+]
+Stwórz osobną tablicę, która zawiera sumę wydatków dla każdej osoby i liczbę zakupów. Użyj foreach.*/
+        var sales = [
+    { customerId: "A123", name: "Alice", amount: 120 },
+    { customerId: "B456", name: "Bob", amount: 50 },
+    { customerId: "A123", name: "Alice", amount: 80 },
+    { customerId: "C789", name: "Charlie", amount: 200 },
+    { customerId: "B456", name: "Bob", amount: 150 },
+    { customerId: "A123", name: "Alice", amount: 100 }
+]
+        var person = []
+        for(const data of sales){
+           // person[data.name]=[data.name,data.amount]
+            //document.write(data.name+" "+data.amount+"<br>")
+            if(person.hasOwnProperty(data.name)){
+                person[data.name]=data.amount+person[data.name]
+            }else{
+                person[data.name]=data.amount
+            }
+        }
+        for(const data of Object.entries(person)){
+            document.write(data+"<br>")
+        }
+        document.write(person)
+    </script>
+</body>
+</html>

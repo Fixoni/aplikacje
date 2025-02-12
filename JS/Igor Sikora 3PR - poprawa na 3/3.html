@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let wybor = parseInt(prompt("Podaj wybor 1-pole, 2-obwod"))
+        let a = parseInt(prompt("Podaj bok a"))
+        let b = parseInt(prompt("Podaj bok b"))
+        if(a <= 0 || b <= 0) {
+            document.write("Podaj liczbe dodatnia!")
+        } else {
+            switch(wybor){
+            case 1:
+                let pole = a * b
+                document.write(`Pole wynosi: ${pole}`)
+                break
+            case 2:
+                let obwod = (2*a)+(2*b)
+                document.write(`Obwód wynosi: ${obwod}`)
+                break
+            default:
+                document.write("Nieprawidłowy wybór!")
+                break
+            }
+        }
+    </script>
+</body>
+</html>

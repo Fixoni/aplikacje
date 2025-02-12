@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Masz liste slownikow (slownik to struktura danych, podobnie jak lista/tablica/zbior i tak dalej, sklada sie z par (klucz, wartosc)):
+//[{"name": "Artur", "age": 24}, {"name": "Patrycja", "age": 20}, {"name": "Adrian", "age": 26}]
+//Posortuj te liste ze wzgledu na klucz age (czyli najstarsza osoba powinna byc pierwsza, a najmlodsza na koncu.
+        let people = [
+    {"name": "Artur", "age": 24},
+    {"name": "Patrycja", "age": 20},
+    {"name": "Adrian", "age": 26}
+];
+
+people.sort((a, b) => b.age - a.age);
+
+    </script>
+</body>
+</html>

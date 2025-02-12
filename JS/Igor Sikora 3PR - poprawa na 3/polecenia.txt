@@ -1,0 +1,16 @@
+zad.1
+wykonaj zestawienie kwot otrzymanych przez ale w ciągu n dni (n podaje użytkownik)
+jeżeli w pierwszym dniu dostala 5 zl o w każdym następnym o 2 zl więcej niż w dniu poprzednim
+
+zad.2
+pobra liczbe calkowita wieksza od 1 i wypisac wszystkie liczby naturalne od 1 do pobranej liczby pogrobic te które sa podzielne przez 10 i policzyć sume tych pogrubionych
+
+zad.3
+w zaleznosci od wyboru użytkownika wyznaczyć pole lub obwod prostokąta o bokach pobranych od użytkownika zadbac by boki były dodatnie
+
+zad.4
+pobieramy od użytkownika jedna liczbe 3 cyfrowa a następnie utworzyć liczbe 3 cyfrowa 
+która będzie miała zamieniona cyfre setek z cyfra jedności 
+
+zad.5 
+program który narusyje n choinek o k gwiazdek

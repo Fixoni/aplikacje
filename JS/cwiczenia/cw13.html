@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Użykownik podaje listę integerów (liczby naturalne) oddzielonych przecinkami. Zrób z nich listę przy pomocy funkcji split(). 
+        //Podziel tę listę na pomniejsze listy o długości n (n podaje użytkownik). 
+        //Jak lista ma 5 elementów, a użytkownik podał długość 2, to musisz stworzyć 3 listy o długościach odpowiednio: 2, 2, 1.
+        //3,6,5,8,9,0,2,1,3,5
+        var a=prompt("Podaj liczby to tablicy po przecinku: ")
+        var n=prompt("Podaj liczbe do podzielenia tablic: ")
+        var tab=[]
+        tab=a.split(",")
+        var dlugosc=tab.length
+        for(var i=0;i<dlugosc;i++){
+            if(i%n==0){
+            var tab2=[]
+            for(var j=0;j<n;j++){
+                tab2.push(tab[i+j])
+                }
+                document.write(tab2)
+                document.write("</br>")
+            }
+        }
+    
+    </script>
+</body>
+</html>

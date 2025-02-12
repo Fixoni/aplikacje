@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Zad3
+        //Pobierz od uzytkownika jedna liczbe naturalna i wypisz wszystkie liczby od 1 do pobranej wartosci,pogrub te z nich ktore sa parzyste i oblicz ich sume
+
+        var a=prompt("Podaj liczbe naturalna: ");
+        var s=0;
+        a=parseInt(a);
+        for(var i=1;i<=a;i++){
+            if(i%2==0){
+                document.write("<b>"+i+"<b>"+"<br>");
+                    s=s+i;
+            }else{
+                document.write(i+"<br>");
+            }
+        }
+        document.write("suma: "+s);
+    </script>
+</body>
+</html>

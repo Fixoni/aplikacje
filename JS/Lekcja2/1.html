@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //od uzytkownika pobierz kwote ktora deponuje w banku ,okres oszczedzania podany w latach pobieramy od uzytkownika,oprocentowanie jest stale i wynosi 4% w skali rocznej
+        //z kapitalizacja polroczna,wykonaj zestawienie stanu oszczednosci obejmujacy kazde polrocze w calym okresie oszczedzania
+        var a=prompt("Podaj kwote: ");
+        var b=prompt("Podaj ilosc lat: ");
+        var o;
+       
+            document.write("Kwota: "+a+"<br>");
+            document.write("ilosc lat: "+b+"<br>");
+            a=parseInt(a);
+            b=parseInt(b);
+           
+          
+            
+            for(var i=1;i<=b*2;i++){
+                o=a*0.02;
+                a=a+o;
+               document.write("polrocze: "+i+"-->");
+               document.write("kwota: "+a+"zl<br>");
+            
+
+            }
+    </script>
+    
+</body>
+</html>

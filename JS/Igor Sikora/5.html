@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //zad.5
+        //narysuj n choinek o podstawie k gwiazdek gdzie n oraz k podaje uzytkonik
+        let n = parseInt(prompt("Podaj n:"));
+        let k = parseInt(prompt("Podaj k:"));
+        for (let j = 1; j <= n; j++) {
+            for (let i = 1; i <= k; i++) {
+                let gwiazdki = "";
+                for (let x = 1; x <= (i * 2 - 1); x++) {
+                    gwiazdki += "*";
+                }
+                let spacje = "";
+                for (let y = 1; y <= (k - i); y++) {
+                    spacje += " ";
+                }
+                document.write(spacje + gwiazdki + "<br>");
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>

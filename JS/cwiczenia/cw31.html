@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Montaż oswietlenia</h2>
+    <form action="" name="form1" id="Myform">
+        <label>Ilosc punktu montażu:</label><br>
+        <input type="number" id="punkty" name="punkty"><br>
+        <label>Rodzaj oswietlenia:</label><br>
+        Neonowe
+        <input type="radio" id="neonowe" name="swiatlo" value="neonowe">
+        halogenowe
+        <input type="radio" id="halogenowe" name="swiatlo" value="halogenowe">
+        ledowe
+        <input type="radio" id="ledowe" name="swiatlo" value="ledowe"><br>
+        <select name="" id="select1">
+            <option value="bezprzewodowe">bezprzewodowe</option>
+            <option value="1modowe">jedno-modowe</option>
+            <option value="2modowe">dwu-modowe</option>
+        </select><br>
+        <select name="" id="select2" multiple>
+            <option value="sypialnia">sypialnia</option>
+            <option value="przedpokoj">przedpokoj</option>
+            <option value="lazienka">lazienka</option>
+            <option value="biuro">biuro</option>
+        </select><br>
+        <button type="button" onclick="oblicz()">Wyznacz cene</button>
+    </form>
+    <p id="rodzaj"></p>
+    <p id="pomieszczenia"></p>
+    <p id="okablowanie"></p>
+    <p id="wynik"></p>
+    <p id="test"></p>
+    <script>
+    //ilosc punktow montazowyzrch
+    //wybrac rodzaj oswietlenia checkbox neonowe, halogenowe, ledowe
+    //wybierz rodzaj okablowania lista (jeden wybor) bezpzrzewodowe, 1 modowe i 2 modowe
+    //wybor pomieszczenia w ktorym ma byc oswietlenie lista multiple
+    //sypialnia, przedpokoj, lazienka, biuro, kuchnia
+    //button wyznacz cene 
+    //nenonowe - 15zl
+    //halogenowe - 20zl
+    //ledowe - 25zl
+    //bezprzewodowe - 30zl
+    //1modowe - 5zl
+    //2modowe - 10zl
+    function oblicz(){
+        let pkt = document.querySelector('#punkty').value;
+        /*
+        let neon = document.querySelector('#neon').checked;
+        let led = document.querySelector('#ledowe').checked;
+        let hal = document.querySelector('#halogenowe').checked;
+        */
+        let s1 = document.querySelector('#select1');
+        let s2 = document.querySelector('#select2');
+        let cena = 0;
+        /*
+        if(neon){
+            cena = 15;
+            document.querySelector('#rodzaj').innerHTML = `Rodzaj: neonowe`;
+        } else if(led){
+            cena = 25;
+            document.querySelector('#rodzaj').innerHTML = `Rodzaj: ledowe`;
+        } else if(hal){
+            cena = 20;
+            document.querySelector('#rodzaj').innerHTML = `Rodzaj: halogenowe`;
+        }
+            */
+
+        switch(s1.value){
+            case "bezprzewodowe":
+                cena = cena + 30;
+                break;
+            case "1modowe":
+                cena = cena + 5;
+                break;
+            case "2modowe":
+                cena = cena + 10;
+                break;
+        }
+        
+        document.querySelector('#okablowanie').innerHTML = `Okablowanie: ${s1.value}`;
+        let element = Array.from(document.getElementById('Myform').elements)
+        let lightPrice = {"neonowe":15,"ledowe":25,"halogenowe":20}
+        for(let i=0;i<element.length;i++){
+            if(element[i].name=='swiatlo' && element[i].checked){
+                cena += lightPrice[element[i].id]
+                document.querySelector('#rodzaj').innerHTML = `Rodzaj: ${element[i].id}`
+            }
+        }
+        cena *= pkt;
+        
+        document.querySelector('#wynik').innerHTML = `Cena: ${cena} zł`;
+
+        let selectedRooms = [];
+        for (let option of s2.selectedOptions) {
+            selectedRooms.push(option.value);
+        }
+        document.querySelector('#pomieszczenia').innerHTML = `Pomieszczenia: ${selectedRooms.join(', ')}`;
+    }
+    </script>
+</body>
+</html>

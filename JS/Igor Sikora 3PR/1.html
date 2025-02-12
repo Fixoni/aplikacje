@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //zad.l
+        //pobierz 3 liczby rzeczywiste wyznacz ich sume, pierwiastek z sumy
+        //zaokgraglij pierwiastek do 2 miejsc po przecinku
+        //podnies do kwadratu
+        //wynik zaokraglij w dol
+        //zad.2
+        //liczbe z zad.1
+        //traktujemy jako rozmiar tablicy ktorymi wypelniamy liczbami losowymi od 1 do 50
+        //pokaz tablice
+        //posortowac malejaco
+        //dodac na koniec liczbe 200 a na poczatek 100
+        //zamien tablice na lanuch a jako separator :
+        //zad.3
+        //wypisz lancuch w sposob
+        //wszysykie : jako indeks gorny koloru czerwonego
+        //wszysktie 5 zielone mozlwie najmniejsza czcionka
+        //ostatni znak ma byc najwiejksza czcionka 
+        let liczba1 = parseInt(prompt("Podaj pierwszą liczbę:"))
+        let liczba2 = parseInt(prompt("Podaj drugą liczbę:"))
+        let liczba3 = parseInt(prompt("Podaj trzecią liczbę:"))
+
+        let suma = liczba1 + liczba2 + liczba3
+        document.write("Suma liczb: " + suma + "<br>")
+
+        let pierwiastek = Math.sqrt(suma)
+        document.write("Pierwiastek z sumy: " + pierwiastek + "<br>")
+
+        pierwiastek = Math.round(pierwiastek * 100) / 100
+        document.write("Pierwiastek zaokrąglony do 2 miejsc po przecinku: " + pierwiastek + "<br>")
+
+        let kwadrat = Math.pow(pierwiastek, 2)
+        document.write("Pierwiastek podniesiony do kwadratu: " + kwadrat + "<br>")
+
+        let wynik = Math.floor(kwadrat)
+        document.write("Wynik zaokrąglony w dół: " + wynik + "<br>")
+
+        let rozmiarTablicy = wynik
+        let tablica = []
+        for (let i = 0; i < rozmiarTablicy; i++) {
+        tablica.push(Math.floor(Math.random() * 50) + 1)
+        }
+
+        document.write("Tablica przed sortowaniem: " + tablica + "<br>")
+
+        tablica.sort((a, b) => b - a)
+
+        document.write("Tablica po posortowaniu malejąco: " + tablica + "<br>")
+
+        tablica.unshift(100)
+        tablica.push(200)
+
+        document.write("Tablica po dodaniu 100 na początek i 200 na koniec: " + tablica + "<br>")
+
+        let tablicaLancuch = tablica.join(":")
+        document.write("Tablica jako łańcuch: " + tablicaLancuch + "<br>")
+
+        let zmiana = ""
+        for (let j = 0; j < tablicaLancuch.length; j++) {
+            if (tablicaLancuch[j] == ":") {
+                document.write('<sup>' + tablicaLancuch[j].fontcolor("red") + '</sup>')
+            } else if (tablicaLancuch[j] == '5') {
+                document.write(tablicaLancuch[j].fontcolor("green").fontsize(7))
+            } else if (j == tablicaLancuch.length - 1) {
+                document.write(tablicaLancuch[j].fontsize(30))
+            } else {
+                document.write(tablicaLancuch[j])
+            }
+        }
+    </script>
+</body>
+</html>
