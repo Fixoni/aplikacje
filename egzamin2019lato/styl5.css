@@ -1,0 +1,56 @@
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.glowny {
+    background-color: Tan;
+    padding: 100px;
+}
+.gorny {
+    display: flex;
+    background-color: sienna;
+    color: white;
+    height: 150px;
+}
+.zdj {
+    float: left;
+    width: 40%;
+}
+.right {
+    float: right;
+    text-align: center;
+    width: 10%;
+}
+.mid {
+    margin: auto;
+    width: 50%;
+    font-size: 150%;
+}
+footer {
+    background-color: sienna;
+    display: flex;
+    height: 150px;
+    padding: 40px;
+    color: white;
+    
+}
+.pierwszy {
+    width: 40%;
+    list-style-type: circle;
+}
+.drugi {
+    width: 50%;
+    font-size: 150%;
+    margin-top: auto;
+}
+.trzeci {
+    text-align: center;
+    width: 10%;
+}
+a {
+    border: 1px dashed sienna;
+    background-color: tan;
+    padding: 40px;
+    height: 150px;
+    color: sienna;
+}

@@ -1,0 +1,31 @@
+zad.1
+
+Dane osobowe h2
+Nazwisko
+Płeć radio
+wykrztalcenie lista rozwijalna
+podstawowe, zawodowe, srednie, wyzsze 
+button wyslij do dane osobowe.txt
+
+nazwisko plec wykrztalcenie
+
+
+zad.2
+w pliku dane.txt 6 rekordow i kazdy rekord to przedmiot np.: matma itd. a druga wartosc to srednia ocen np.: matma 2.5
+formularz
+szkola h2
+wybierz przedmiot lista rozwijalna z danych z pliku (można wybrac kilka multiple)
+nazwisko
+wyslij
+kowalski wybrane przedmioty(moze byc kilka) i liczona srednia gdy sa 2 przedmioty lub wiecej
+
+zad.3
+zamowienie pizzy
+wybor pizzy lista rozwijalna
+czy rabat radio
+wyslij
+hawajska - 40 zl
+margarita -35 zl
+peperonii - 30 zl
+rabat - 10% ceny
+
